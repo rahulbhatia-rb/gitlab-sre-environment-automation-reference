@@ -8,3 +8,7 @@ python3 environment_guard.py profile.json
 ```
 
 Independent demonstration; not GitLab internal software.
+
+## Design review
+
+The control makes ephemeral environments reproducible and safe: build images are immutable, credentials expire, provisioning has an SLO, and teardown is verified. A CI job can call this guard before reporting an environment URL to a developer, preventing leaked credentials and orphaned resources.
